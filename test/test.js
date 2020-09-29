@@ -1,12 +1,18 @@
 const chai = require('chai');
 chai.use(require('chai-spies'));
-const { expect, spy } = chai;
+const {
+    expect,
+    spy
+} = chai;
 
-const { TreeNode, BST } = require('../lib/bst');
+const {
+    TreeNode,
+    BST
+} = require('../lib/bst');
 
 describe('BST', () => {
     describe('#constructor()', () => {
-        it ('should initialize the `root` property to null', () => {
+        it('should initialize the `root` property to null', () => {
             let tree = new BST();
             expect(tree).to.have.property('root');
             expect(tree.root).to.equal(null);
@@ -14,7 +20,7 @@ describe('BST', () => {
     });
 
     describe('#insert(val)', () => {
-        it ('should insert a TreeNode with the given value into the BST', () => {
+        it('should insert a TreeNode with the given value into the BST', () => {
             let tree = new BST();
             tree.insert(10);
             tree.insert(5);
@@ -65,7 +71,7 @@ describe('BST', () => {
         });
 
         context('when the val is contained in the BST', () => {
-            it ('should return true', () => {
+            it('should return true', () => {
                 expect(tree.searchRecur(10)).to.equal(true);
                 expect(tree.searchRecur(7)).to.equal(true);
                 expect(tree.searchRecur(16)).to.equal(true);
@@ -73,7 +79,7 @@ describe('BST', () => {
         });
 
         context('when the val is not contained in the BST', () => {
-            it ('should return false', () => {
+            it('should return false', () => {
                 expect(tree.searchRecur(-4)).to.equal(false);
                 expect(tree.searchRecur(1.5)).to.equal(false);
                 expect(tree.searchRecur(14)).to.equal(false);
@@ -106,7 +112,7 @@ describe('BST', () => {
         });
 
         context('when the val is contained in the BST', () => {
-            it ('should return true', () => {
+            it('should return true', () => {
                 expect(tree.searchIter(10)).to.equal(true);
                 expect(tree.searchIter(7)).to.equal(true);
                 expect(tree.searchIter(16)).to.equal(true);
@@ -114,7 +120,7 @@ describe('BST', () => {
         });
 
         context('when the val is not contained in the BST', () => {
-            it ('should return false', () => {
+            it('should return false', () => {
                 expect(tree.searchIter(-4)).to.equal(false);
                 expect(tree.searchIter(1.5)).to.equal(false);
                 expect(tree.searchIter(14)).to.equal(false);
